@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+
+<h1 class="text-center">Add new Todo</h1>
+<div class="container">
+    <form action="/todos/<%= todo._id %>?_method=PUT" method="POST" id="new_form">
+        <div class="form-group" >
+            <input class="form-control" type="text" name="todo" value="<%= todo.task %>">
+        </div>    
+        <button  class="btn btn-primary btn-lg">Submit</button>
+    </form>
+</div>
+
+<% include ./partials/footer %>

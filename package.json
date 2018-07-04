@@ -1,0 +1,18 @@
+{
+  "name": "to_do_ajax",
+  "version": "1.0.0",
+  "description": "Single page to do app using AJAX",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manjeet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.2.0"
+  }
+}

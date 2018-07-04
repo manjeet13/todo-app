@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<h1 class="text-center header">Your Todo list for today</h1>
+<div class="container">
+    <ol class="list-group" id="todos">
+            <% todo.forEach(function(todo){ %>
+                <div class="inline">
+                    <li class="list-group-item"><%= todo.task %></l,5i>
+                    <div class="text-right">
+                        <a class="btn btn-sm btn-warning" href="/todos/<%= todo._id %>/edit">Edit</a>
+                        <form id="delete" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Done</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        <li><a class="btn btn-success btn-block" id="btn" href="/todos/new">Add</a></li>
+    </ol>
+    
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,38 @@
+.header{
+    color: #465470;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#todos{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    color: blue;
+    list-style: none;
+}
+
+#btn{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li:hover{
+    background-color: #dadfe8;
+}
+
+#new_form{
+    width: 40%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inline{
+    display: inline-block !important;
+}
+
+#delete{
+    display: inline-block;
+}
