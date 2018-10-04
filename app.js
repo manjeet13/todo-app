@@ -2,12 +2,13 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     Todo            = require("./models/todo"),
     bodyParser      = require("body-parser"),
-    methodOverride  = require("method-override");
+    methodOverride  = require("method-override"),
+    configs         = require("./configs/index.js");
 
 var app = express();
 
 //connect to the database
-mongoose.connect("mongodb://localhost:27017/todo_app");
+mongoose.connect(configs.dbUrl);
 
 
 app.use(express.static(__dirname + "/public"));
@@ -46,7 +47,7 @@ app.post('/todos', function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.redirect("todos");
+            res.json(todo);
         }
     });
 });
