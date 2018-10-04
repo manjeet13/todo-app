@@ -1,22 +1,37 @@
 <% include ./partials/header %>
 
-<h1 class="text-center header">Your Todo list for today</h1>
-<div class="container">
-    <ol class="list-group" id="todos">
-            <% todo.forEach(function(todo){ %>
-                <div class="inline">
-                    <li class="list-group-item"><%= todo.task %></l,5i>
-                    <div class="text-right">
-                        <a class="btn btn-sm btn-warning" href="/todos/<%= todo._id %>/edit">Edit</a>
-                        <form id="delete" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-sm btn-danger">Done</button>
-                        </form>
-                    </div>
-                </div>
-            <% }); %>
-        <li><a class="btn btn-success btn-block" id="btn" href="/todos/new">Add</a></li>
-    </ol>
-    
+<div class="row">
+    <div class="col-md-6 col-md-offset-3"> 
+        
+        <h1 class="text-center">Add new Todo</h1>
+            <form action="/todos" method="POST" id="new_form">
+                <div class="form-group" >
+                    <label>Item Text</label>
+                    <input type="text" class="form-control" name="todo" placeholder="task">
+                </div>    
+                <button  class="btn btn-primary btn-lg">Create</button>
+            </form>
+            
+        <h1 class="text-center header">Your Todo list for today</h1>
+            <ul class="list-group" id="todos">
+                    <% todo.forEach(function(todo){ %>
+                        <div class="inline">
+                            <li class="list-group-item">
+                                <span class="lead">
+                                    <%= todo.task %>
+                                </span>
+                                <div class="pull-right">
+                                    <a href="/todos/<%= todo._id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                                    <form style="display: inline" action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+                                        <button class="btn btn-sm btn-danger">Done</button>
+                                    </form>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                    <% }); %>
+                <!--<li><a class="btn btn-success btn-block" id="btn" href="/todos/new">Add</a></li>-->
+            </ul>
+    </div>
 </div>
 
 <% include ./partials/footer %>
